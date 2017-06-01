@@ -15,9 +15,13 @@
             android:id="@+id/nav_saerch"
             android:icon="@android:drawable/ic_search_category_default"
             android:title="搜尋" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@mipmap/newspaper"
+            android:title="財經新聞" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="工具">
         <menu>
             <item
                 android:id="@+id/nav_help"
@@ -29,5 +33,6 @@
                 android:title="關於" />
         </menu>
     </item>
+
 
 </menu>

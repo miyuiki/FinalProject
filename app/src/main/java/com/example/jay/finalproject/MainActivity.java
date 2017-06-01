@@ -1,8 +1,11 @@
 package com.example.jay.finalproject;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        Intent intent = new Intent();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -89,7 +93,18 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_help) {
 
         } else if (id == R.id.nav_about) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("版本資訊")
+                    .setMessage("version 1.0.0")
+                    .setPositiveButton("朕知道了", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {}
+                    })
+                    .show();
 
+        } else if (id == R.id.nav_news) {
+            intent.setClass(MainActivity.this,News.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
